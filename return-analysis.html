@@ -593,14 +593,14 @@
             <i class="fa fa-credit-card w-5 mr-3"></i>
             <span>付费分析</span>
           </div>
-          <div class="sidebar-item">
+          <!-- <div class="sidebar-item">
             <i class="fa fa-cubes w-5 mr-3"></i>
             <span>功能特性</span>
-          </div>
-          <div class="sidebar-item">
+          </div> -->
+          <!-- <div class="sidebar-item">
             <i class="fa fa-robot w-5 mr-3"></i>
             <span>AI分析</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </aside>
@@ -612,74 +612,78 @@
         <div class="flex justify-between items-center mb-3">
           <h2 class="text-xl font-bold text-gray-800">回流分析</h2>
           <div class="flex items-center space-x-2">
-            <button class="text-gray-500 hover:text-primary text-sm">
+            <!-- <button class="text-gray-500 hover:text-primary text-sm">
               <i class="fa fa-calendar"></i>
-            </button>
-            <button class="text-gray-500 hover:text-primary text-sm">收藏</button>
-            <button class="text-gray-500 hover:text-primary text-sm">
+            </button> -->
+            <!-- <button class="text-gray-500 hover:text-primary text-sm">收藏</button> -->
+            <!-- <button class="text-gray-500 hover:text-primary text-sm">
               <i class="fa fa-th-large"></i>
               <span class="ml-1">主题</span>
-            </button>
+            </button> -->
           </div>
         </div>
         
         <!-- 筛选区 -->
         <div class="flex items-center space-x-4 mb-4">
-          <span class="text-sm text-gray-600 flex items-center h-8">日期</span>
-          <div class="relative" id="dateSelector">
-            <input type="text" id="dateRangeInput" value="2026-04-14 ~ 2026-04-20" class="pl-8 pr-4 py-1.5 rounded border border-gray-300 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent w-64 cursor-pointer" onclick="toggleDateOptions()">
-            <i class="fa fa-calendar-o absolute left-2.5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
-            <i class="fa fa-chevron-down absolute right-2.5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
-            <div id="dateOptions" class="absolute left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 p-2 hidden z-10">
-              <div class="space-y-2">
-                <div class="space-y-1">
-                  <button onclick="selectDateRange(7)" class="w-full text-left px-3 py-2 text-sm hover:bg-gray-100 rounded">近7天</button>
-                  <button onclick="selectDateRange(30)" class="w-full text-left px-3 py-2 text-sm hover:bg-gray-100 rounded">近30天</button>
-                  <button onclick="selectDateRange(90)" class="w-full text-left px-3 py-2 text-sm hover:bg-gray-100 rounded">近90天</button>
-                </div>
-                <div class="border-t border-gray-100 my-1"></div>
-                <div id="calendarContainer" class="p-2">
-                  <div class="flex justify-between items-center mb-2">
-                    <button onclick="changeMonth(-1)" class="text-gray-600 hover:text-primary">
-                      <i class="fa fa-chevron-left"></i>
-                    </button>
-                    <h3 id="currentMonth" class="text-sm font-medium text-gray-800">2026年4月</h3>
-                    <button onclick="changeMonth(1)" class="text-gray-600 hover:text-primary">
-                      <i class="fa fa-chevron-right"></i>
-                    </button>
+          <div class="flex space-x-2">
+            <button class="bg-primary text-white px-3 py-1.5 rounded-lg text-sm font-medium">全平台</button>
+            <!-- <button class="bg-gray-100 text-gray-600 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors duration-200">
+              <i class="fa fa-filter mr-1"></i>
+              回流类型
+            </button> -->
+            <div class="relative">
+              <select class="pl-2.5 pr-8 py-1.5 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent appearance-none bg-white">
+                <option>所有回流</option>
+                <option>自然回流</option>
+                <option>召回回流</option>
+                <option>活动回流</option>
+              </select>
+              <i class="fa fa-chevron-down absolute right-2.5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
+            </div>
+          </div>
+          <div class="ml-auto">
+            <div class="relative" id="dateSelector">
+              <input type="text" id="dateRangeInput" value="2020-03-23 ~ 2020-04-05" class="pl-8 pr-4 py-1.5 rounded border border-gray-300 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent w-64 cursor-pointer" onclick="toggleDateOptions()">
+              <i class="fa fa-calendar-o absolute left-2.5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
+              <i class="fa fa-chevron-down absolute right-2.5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
+              <div id="dateOptions" class="absolute left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 p-2 hidden z-10">
+                <div class="space-y-2">
+                  <div class="space-y-1">
+                    <button onclick="selectDateRange(7)" class="w-full text-left px-3 py-2 text-sm hover:bg-gray-100 rounded">近7天</button>
+                    <button onclick="selectDateRange(30)" class="w-full text-left px-3 py-2 text-sm hover:bg-gray-100 rounded">近30天</button>
+                    <button onclick="selectDateRange(90)" class="w-full text-left px-3 py-2 text-sm hover:bg-gray-100 rounded">近90天</button>
                   </div>
-                  <div class="grid grid-cols-7 gap-1 text-center text-xs">
-                    <div class="text-gray-500 py-1">日</div>
-                    <div class="text-gray-500 py-1">一</div>
-                    <div class="text-gray-500 py-1">二</div>
-                    <div class="text-gray-500 py-1">三</div>
-                    <div class="text-gray-500 py-1">四</div>
-                    <div class="text-gray-500 py-1">五</div>
-                    <div class="text-gray-500 py-1">六</div>
-                  </div>
-                  <div id="calendarDays" class="grid grid-cols-7 gap-1 text-center">
-                    <!-- 日历天数将通过JavaScript生成 -->
-                  </div>
-                  <div class="flex justify-between mt-3">
-                    <button onclick="confirmDateSelection()" class="text-xs text-primary hover:underline">确定</button>
-                    <button onclick="resetDateSelection()" class="text-xs text-gray-500 hover:underline">重置</button>
+                  <div class="border-t border-gray-100 my-1"></div>
+                  <div id="calendarContainer" class="p-2">
+                    <div class="flex justify-between items-center mb-2">
+                      <button onclick="changeMonth(-1)" class="text-gray-600 hover:text-primary">
+                        <i class="fa fa-chevron-left"></i>
+                      </button>
+                      <h3 id="currentMonth" class="text-sm font-medium text-gray-800">2026年4月</h3>
+                      <button onclick="changeMonth(1)" class="text-gray-600 hover:text-primary">
+                        <i class="fa fa-chevron-right"></i>
+                      </button>
+                    </div>
+                    <div class="grid grid-cols-7 gap-1 text-center text-xs">
+                      <div class="text-gray-500 py-1">日</div>
+                      <div class="text-gray-500 py-1">一</div>
+                      <div class="text-gray-500 py-1">二</div>
+                      <div class="text-gray-500 py-1">三</div>
+                      <div class="text-gray-500 py-1">四</div>
+                      <div class="text-gray-500 py-1">五</div>
+                      <div class="text-gray-500 py-1">六</div>
+                    </div>
+                    <div id="calendarDays" class="grid grid-cols-7 gap-1 text-center">
+                      <!-- 日历天数将通过JavaScript生成 -->
+                    </div>
+                    <div class="flex justify-between mt-3">
+                      <button onclick="confirmDateSelection()" class="text-xs text-primary hover:underline">确定</button>
+                      <button onclick="resetDateSelection()" class="text-xs text-gray-500 hover:underline">重置</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <span class="text-sm text-gray-600 flex items-center h-8">平台</span>
-          <div class="relative">
-            <select class="pl-2.5 pr-8 py-1.5 rounded border border-gray-300 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent appearance-none">
-              <option>全部</option>
-              <option>iOS</option>
-              <option>Android</option>
-              <option>PC</option>
-            </select>
-            <i class="fa fa-chevron-down absolute right-2.5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
-          </div>
-          <div class="ml-auto">
-            <button class="text-sm text-primary hover:underline">高级筛选</button>
           </div>
         </div>
       </div>
@@ -687,99 +691,71 @@
       <!-- 回流概览卡片 -->
       <div class="grid grid-cols-6 gap-4 mb-4">
         <div class="stat-card col-span-1">
-          <div class="stat-value">15,130</div>
-          <div class="stat-label">回流用户</div>
-          <div class="stat-change positive">+2.05%</div>
+          <div class="stat-value">82,022</div>
+          <div class="stat-label">日均回流账号</div>
+          <div class="stat-change positive">+115.27%</div>
         </div>
         <div class="stat-card col-span-1">
-          <div class="stat-value">4,916</div>
-          <div class="stat-label">回流账号</div>
-          <div class="stat-change positive">+0.02%</div>
+          <div class="stat-value">35.27%</div>
+          <div class="stat-label">日均回流占比</div>
+          <div class="stat-change positive">+15.27%</div>
         </div>
         <div class="stat-card col-span-1">
-          <div class="stat-value">36.28%</div>
-          <div class="stat-label">回流率</div>
-          <div class="stat-change negative">-0.02%</div>
+          <div class="stat-value">90,739</div>
+          <div class="stat-label">日均回流付费</div>
+          <div class="stat-change positive">+30.73%</div>
         </div>
         <div class="stat-card col-span-1">
-          <div class="stat-value">5,173.42万</div>
-          <div class="stat-label">活跃账号价值</div>
-          <div class="stat-change positive">+0.02%</div>
+          <div class="stat-value">20.14%</div>
+          <div class="stat-label">日均回流付费占比</div>
+          <div class="stat-change positive">+34.14%</div>
         </div>
-        <div class="stat-card col-span-2">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="stat-value">34.56%</div>
-              <div class="stat-label">回流用户占比</div>
-            </div>
-            <div class="text-right">
-              <button class="text-xs text-primary hover:underline">日</button>
-              <button class="text-xs text-gray-500 hover:underline ml-2">周</button>
-              <button class="text-xs text-gray-500 hover:underline ml-2">月</button>
-            </div>
-          </div>
+        <div class="stat-card col-span-1">
+          <div class="stat-value">31.91%</div>
+          <div class="stat-label">日均回流转化率</div>
+          <div class="stat-change positive">+1.91%</div>
+        </div>
+        <div class="stat-card col-span-1">
+          <div class="stat-value">1.01亿</div>
+          <div class="stat-label">历史累计流失账号</div>
+          <div class="stat-change positive">+0.01亿</div>
         </div>
       </div>
       
-      <!-- 回流趋势和回流漏斗模块 -->
+      <!-- DAU构成趋势和流失账号趋势模块 -->
       <div class="grid grid-cols-2 gap-4 mb-4">
-        <!-- 回流趋势图 -->
+        <!-- DAU构成趋势图 -->
         <div class="card">
           <div class="flex justify-between items-start mb-4">
             <div class="flex items-center">
-              <span class="font-medium text-gray-700">回流趋势</span>
+              <span class="font-medium text-gray-700">DAU构成趋势</span>
               <i class="fa fa-info-circle ml-1 text-gray-400 text-xs"></i>
             </div>
-            <div class="flex space-x-2">
-              <button class="text-xs text-primary hover:underline">日</button>
-              <button class="text-xs text-gray-500 hover:underline">周</button>
-              <button class="text-xs text-gray-500 hover:underline">月</button>
-            </div>
+            <button class="text-gray-400 hover:text-gray-600 text-xs">
+              更多
+              <i class="fa fa-ellipsis-h ml-1"></i>
+            </button>
           </div>
           <div class="h-64">
-            <canvas id="retentionTrendChart"></canvas>
+            <canvas id="dauCompositionChart"></canvas>
           </div>
         </div>
         
-        <!-- 回流漏斗图 -->
+        <!-- 流失账号趋势图 -->
         <div class="card">
           <div class="flex justify-between items-start mb-4">
             <div class="flex items-center">
-              <span class="font-medium text-gray-700">回流漏斗</span>
+              <span class="font-medium text-gray-700">流失账号趋势</span>
               <i class="fa fa-info-circle ml-1 text-gray-400 text-xs"></i>
             </div>
-            <button class="text-gray-400 hover:text-gray-600 text-xs">
-              更多
-              <i class="fa fa-ellipsis-h ml-1"></i>
-            </button>
+            <div class="flex space-x-2">
+              <button class="text-xs text-primary hover:underline">图</button>
+              <button class="text-xs text-gray-500 hover:underline">表</button>
+            </div>
           </div>
           <div class="h-64">
-            <canvas id="retentionFunnelChart"></canvas>
+            <canvas id="churnTrendChart"></canvas>
           </div>
-        </div>
-      </div>
-      
-      <!-- DAU趋势模块 -->
-      <div class="card mb-4">
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center">
-            <span class="font-medium text-gray-700">DAU趋势</span>
-            <i class="fa fa-info-circle ml-1 text-gray-400 text-xs"></i>
-          </div>
-          <div class="flex space-x-4">
-            <div class="flex space-x-2">
-              <button class="text-xs text-primary hover:underline">日</button>
-              <button class="text-xs text-gray-500 hover:underline">周</button>
-              <button class="text-xs text-gray-500 hover:underline">月</button>
-            </div>
-            <button class="text-gray-400 hover:text-gray-600 text-xs">
-              更多
-              <i class="fa fa-ellipsis-h ml-1"></i>
-            </button>
-          </div>
-        </div>
-        <div class="h-64">
-          <canvas id="dauTrendChart"></canvas>
         </div>
       </div>
       
@@ -853,84 +829,63 @@
   </footer>
   
   <script>
-    // 回流趋势图数据
-    const retentionTrendData = {
-      labels: ['04/14', '04/15', '04/16', '04/17', '04/18', '04/19', '04/20'],
+    // DAU构成趋势图数据
+    const dauCompositionData = {
+      labels: ['03/19', '03/21', '03/23', '03/25', '03/27', '03/29', '03/31'],
       datasets: [
         {
-          label: '7-14天回流',
-          data: [8500, 8800, 9200, 9000, 9500, 9300, 9800],
-          borderColor: '#1890ff',
-          backgroundColor: 'rgba(24, 144, 255, 0.1)',
-          tension: 0.4,
-          fill: true,
-          borderWidth: 2
+          label: '回流账号',
+          data: [1800000, 1850000, 1900000, 1950000, 2000000, 2050000, 2100000],
+          backgroundColor: 'rgba(24, 144, 255, 0.7)',
+          borderColor: 'rgba(24, 144, 255, 1)',
+          borderWidth: 1
         },
         {
-          label: '15-29天回流',
-          data: [4500, 4300, 4700, 4500, 4900, 4700, 5100],
-          borderColor: '#52c41a',
-          backgroundColor: 'rgba(82, 196, 26, 0.1)',
-          tension: 0.4,
-          fill: true,
-          borderWidth: 2
+          label: '新增账号',
+          data: [200000, 210000, 220000, 230000, 240000, 250000, 260000],
+          backgroundColor: 'rgba(250, 173, 20, 0.7)',
+          borderColor: 'rgba(250, 173, 20, 1)',
+          borderWidth: 1
         },
         {
-          label: '30天以上回流',
-          data: [2100, 2000, 2200, 2100, 2300, 2200, 2400],
-          borderColor: '#faad14',
-          backgroundColor: 'rgba(250, 173, 20, 0.1)',
-          tension: 0.4,
-          fill: true,
-          borderWidth: 2
-        }
-      ]
-    };
-    
-    // 回流漏斗图数据
-    const retentionFunnelData = {
-      labels: ['流失用户', '触达用户', '召回用户', '回流用户'],
-      datasets: [
-        {
-          label: '用户数',
-          data: [50000, 35000, 20000, 15130],
-          backgroundColor: [
-            'rgba(245, 34, 45, 0.7)',
-            'rgba(250, 173, 20, 0.7)',
-            'rgba(82, 196, 26, 0.7)',
-            'rgba(24, 144, 255, 0.7)'
-          ],
-          borderColor: [
-            'rgba(245, 34, 45, 1)',
-            'rgba(250, 173, 20, 1)',
-            'rgba(82, 196, 26, 1)',
-            'rgba(24, 144, 255, 1)'
-          ],
+          label: '持续登录账号',
+          data: [30000, 32000, 34000, 36000, 38000, 40000, 42000],
+          backgroundColor: 'rgba(82, 196, 26, 0.7)',
+          borderColor: 'rgba(82, 196, 26, 1)',
           borderWidth: 1
         }
       ]
     };
     
-    // DAU趋势图数据
-    const dauTrendData = {
-      labels: ['04/14', '04/15', '04/16', '04/17', '04/18', '04/19', '04/20'],
+    // 流失账号趋势图数据
+    const churnTrendData = {
+      labels: ['03/23', '03/25', '03/27', '03/29', '03/31', '04/02', '04/05'],
       datasets: [
         {
-          label: 'DAU',
-          data: [43000, 42500, 43500, 44000, 44500, 45000, 45500],
+          label: '流失7-13日',
+          data: [800000, 900000, 850000, 950000, 1000000, 980000, 1050000],
           borderColor: '#1890ff',
           backgroundColor: 'rgba(24, 144, 255, 0.1)',
           tension: 0.4,
-          fill: true,
+          fill: false,
           borderWidth: 2
         },
         {
-          label: '回流用户',
-          data: [14500, 14800, 15000, 15200, 15300, 15400, 15130],
+          label: '流失14-27日',
+          data: [1500000, 1600000, 1550000, 1650000, 1700000, 1680000, 1750000],
+          borderColor: '#faad14',
+          backgroundColor: 'rgba(250, 173, 20, 0.1)',
+          tension: 0.4,
+          fill: false,
+          borderWidth: 2
+        },
+        {
+          label: '流失30-90日',
+          data: [600000, 650000, 620000, 680000, 700000, 690000, 720000],
           borderColor: '#52c41a',
           backgroundColor: 'rgba(82, 196, 26, 0.1)',
           tension: 0.4,
-          fill: true,
+          fill: false,
           borderWidth: 2
         }
       ]
@@ -973,11 +928,11 @@
       
       // 初始化图表
       try {
-        // 回流趋势图
-        const retentionTrendCtx = document.getElementById('retentionTrendChart').getContext('2d');
-        new Chart(retentionTrendCtx, {
-          type: 'line',
-          data: retentionTrendData,
+        // DAU构成趋势图
+        const dauCompositionCtx = document.getElementById('dauCompositionChart').getContext('2d');
+        new Chart(dauCompositionCtx, {
+          type: 'bar',
+          data: dauCompositionData,
           options: {
             responsive: true,
             maintainAspectRatio: false,
@@ -1019,57 +974,11 @@
           }
         });
         
-        // 回流漏斗图
-        const retentionFunnelCtx = document.getElementById('retentionFunnelChart').getContext('2d');
-        new Chart(retentionFunnelCtx, {
-          type: 'bar',
-          data: retentionFunnelData,
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: {
-                display: false
-              },
-              tooltip: {
-                mode: 'index',
-                intersect: false
-              }
-            },
-            scales: {
-              y: {
-                beginAtZero: true,
-                grid: {
-                  drawBorder: false,
-                  color: 'rgba(0,0,0,0.05)'
-                },
-                ticks: {
-                  font: {
-                    size: 10
-                  },
-                  color: '#8c8c8c'
-                }
-              },
-              x: {
-                grid: {
-                  display: false
-                },
-                ticks: {
-                  font: {
-                    size: 10
-                  },
-                  color: '#8c8c8c'
-                }
-              }
-            }
-          }
-        });
-        
-        // DAU趋势图
-        const dauTrendCtx = document.getElementById('dauTrendChart').getContext('2d');
-        new Chart(dauTrendCtx, {
+        // 流失账号趋势图
+        const churnTrendCtx = document.getElementById('churnTrendChart').getContext('2d');
+        new Chart(churnTrendCtx, {
           type: 'line',
-          data: dauTrendData,
+          data: churnTrendData,
           options: {
             responsive: true,
             maintainAspectRatio: false,
