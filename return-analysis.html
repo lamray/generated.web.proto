@@ -309,7 +309,8 @@
     }
     
     [data-theme="dark"] .bg-white,
-    [data-theme="dark"] .card {
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .stat-card {
       background-color: var(--card-bg) !important;
     }
     
@@ -387,6 +388,23 @@
     
     [data-theme="dark"] .bg-primary {
       background-color: var(--primary-color) !important;
+    }
+    
+    /* 指标卡暗黑模式样式 */
+    [data-theme="dark"] .stat-value {
+      color: var(--text-primary) !important;
+    }
+    
+    [data-theme="dark"] .stat-label {
+      color: var(--text-secondary) !important;
+    }
+    
+    [data-theme="dark"] .stat-change.positive {
+      color: #52c41a !important;
+    }
+    
+    [data-theme="dark"] .stat-change.negative {
+      color: #f5222d !important;
     }
     
     /* 日期选择器和渠道选项适配 */
